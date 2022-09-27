@@ -1,0 +1,114 @@
+@use 'initials';
+@use 'variables';
+@use 'public';
+@use 'mixinsfunc';
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700&family=Berkshire+Swash&family=Roboto:wght@300;400&family=Spicy+Rice&display=swap");
+
+
+.container__filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    position: relative;
+    width: 501px;
+    height: 404px;
+    background: variables.$bg-menu;
+    box-shadow: 0px 4px 14px rgba(78, 83, 88, 0.05);
+    border-radius: 16px;
+}
+
+.title {
+    font-family: variables.$ff-principal;
+    display: flex;
+    padding-top: 1rem;
+    justify-content: center;
+}
+
+.title__item {
+    color: variables.$tg-titulo;
+}
+
+.close {
+    position: absolute;
+    right: 2rem;
+
+}
+
+.filter__menu__item {
+    list-style: none;
+    text-decoration: none;
+    display: grid;
+    align-items: center;
+    width: 85%;
+    justify-self: center;
+    height: 4rem;
+    text-align: center;
+    border-bottom: solid #ecf1f8;
+}
+
+.filter__menu__item:hover {
+    background-color: variables.$bb-invert;
+    color: variables.$ts-boton;
+    width: 100%;
+}
+
+.container__filters__items {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton__principal {
+    @include mixinsfunc.boton-color(58px, 95%, variables.$bb-principal, white, none, 400, 16px, variables.$ff-principal);
+
+}
+
+.boton__principal:disabled {
+    @include mixinsfunc.boton-color(58px, 95%, variables.$bb-disabled, variables.$tl-boton, none, 400, 16px, variables.$ff-principal);
+}
+
+
+@media screen and (max-width: 500px) {
+    .container__filters {
+        width: 100vw;
+    }
+
+    .container__main {
+        width: 100%;
+    }
+
+    .botones__opciones {
+        grid-template-columns: 1fr;
+    }
+
+    .mobile__header {
+        grid-area: head;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        padding: 0;
+        align-items: center;
+    }
+
+    .container__principal {
+        display: grid;
+        width: 100%;
+        grid-template-areas:
+            "head"
+            "opcion";
+        grid-template-columns: 1fr;
+        grid-template-rows: 7vh auto;
+        padding: 1rem;
+        gap: 1rem;
+        justify-content: center;
+
+    }
+
+
+}

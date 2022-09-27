@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700&family=Berkshire+Swash&family=Roboto:wght@300;400&family=Spicy+Rice&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: "Be Vietnam Pro";
+  min-height: 100vh;
+  background: #d9d9d9;
+}
+
+.boton__img {
+  padding-right: 1rem;
+}
+
+.resumen__aceptacion {
+  height: 30%;
+  display: flex;
+  align-items: center;
+  font-family: "Roboto Flex";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #383838;
+}
+
+.mobile_resumen__aceptacion {
+  height: 30%;
+  display: flex;
+  align-items: center;
+  font-family: "Roboto Flex";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #383838;
+}
+
+.resumen__aceptacion a {
+  color: #d02932;
+  padding-left: 5px;
+}
+
+.mobile__resumen__aceptacion a {
+  color: #d02932;
+  padding-left: 5px;
+}
+
+.message {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.03em;
+  color: #888b8e;
+}
+
+.opcion_titulo {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: flex-end;
+  letter-spacing: -0.02em;
+  color: #888b8e;
+}
+
+.opcion_subtitulo {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: flex-end;
+  letter-spacing: -0.03em;
+  color: #c1c1c1;
+}
+
+.invert {
+  background: #fafafa;
+  color: #e32a31;
+}
+
+.detalle__titulo {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.03em;
+  color: #c1c1c1;
+}
+
+.boletas__item__details {
+  padding: 2px 8px;
+  gap: 2px;
+  border: 1px solid #c1c1c1;
+  border-radius: 24px;
+}
+
+.item__subtitulo {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: flex-end;
+  letter-spacing: -0.03em;
+  padding-top: 0.2rem;
+  color: #888b8e;
+}
+
+.item__titulo {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: flex-end;
+  letter-spacing: -0.02em;
+  color: #4e5358;
+}
+
+.boton__perfil {
+  padding-left: 1rem;
+}
+
+.title {
+  padding-bottom: 0.5rem;
+  font-family: "Be Vietnam Pro";
+}
+
+.opcion__centrada {
+  display: grid;
+  justify-content: center;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  height: 25%;
+  align-items: center;
+  color: #e32a31;
+}
+
+.resumen__pasos {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  color: #c1c1c1;
+}
+
+.resumen__mensaje {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.03em;
+  height: 10%;
+  color: #4e5358;
+}
+
+.informativo {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 2rem;
+  font-family: "Roboto Flex";
+  color: #4e5358;
+}
+
+.container__login {
+  z-index: 100;
+  height: 98.3vh;
+  width: 100%;
+  background: linear-gradient(0deg, #e4e7eb 0%, #ffffff 55.93%);
+}
+
+.container__access {
+  margin: auto;
+  max-width: 600px;
+  height: 80vh;
+  border: 1px solid #ecf1f8;
+  border-radius: 14.5991px;
+}
+
+.title {
+  width: 100%;
+  height: 35px;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 35px;
+  letter-spacing: -0.02em;
+  color: #383838;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.login {
+  font-family: "Roboto Flex";
+  font-style: normal;
+  font-weight: 600;
+  padding: 14px;
+  gap: 22px;
+  width: 520px;
+  height: 40px;
+  background: #fafafa;
+  border: 1px solid #ecf1f8;
+  border-radius: 8px;
+  align-self: stretch;
+  font-family: "Roboto Flex";
+}
+
+.clave {
+  font-family: "Roboto Flex";
+  font-style: normal;
+  font-weight: 600;
+  padding: 14px;
+  gap: 22px;
+  width: 520px;
+  height: 40px;
+  background: #fafafa;
+  border: 1px solid #ecf1f8;
+  border-radius: 8px;
+  align-self: stretch;
+  font-family: "Roboto Flex";
+}
+
+.boton__principal {
+  width: 100%;
+  height: 58px;
+  background: #e32a31;
+  flex-grow: 0;
+  color: white;
+  border-radius: 8px;
+  border-style: none;
+  border: 1px solid none;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.boton__principal:disabled {
+  width: 100%;
+  height: 58px;
+  background: #E4E7EB;
+  flex-grow: 0;
+  color: #888b8e;
+  border-radius: 8px;
+  border-style: none;
+  border: 1px solid none;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.form__container {
+  display: grid;
+  justify-content: center;
+  padding-top: 3.2rem;
+  gap: 2rem;
+  height: 38vh;
+}
+
+.form__group {
+  margin-top: 0.7rem;
+  position: relative;
+  height: 5vh;
+}
+
+.container__image {
+  display: grid;
+  justify-content: center;
+}
+
+.form__label {
+  cursor: pointer;
+  position: absolute;
+  font-family: "Be Vietnam Pro";
+  top: -1.4rem;
+  left: 5px;
+}
+
+.header__access {
+  height: 4rem;
+  display: grid;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.logo__access {
+  left: 5rem;
+}
+
+@media screen and (max-width: 500px) {
+  .boton__principal {
+    width: 90vw;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: -0.03em;
+  }
+  .login {
+    width: 90vw;
+    height: 40px;
+  }
+  .clave {
+    width: 90vw;
+    height: 40px;
+  }
+  .usuario__office {
+    width: 280px;
+  }
+  .form__label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .container__access {
+    border: none;
+  }
+}
+
+/*# sourceMappingURL=login.css.map */

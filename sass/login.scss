@@ -1,0 +1,122 @@
+@use 'initials';
+@use 'variables';
+@use 'public';
+@use 'mixinsfunc';
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700&family=Berkshire+Swash&family=Roboto:wght@300;400&family=Spicy+Rice&display=swap");
+
+.container__login {
+    z-index: 100;
+    height: 98.3vh;
+    width: 100%;
+    @include mixinsfunc.gradiente;
+}
+
+.container__access {
+    margin: auto;
+    max-width: 600px;
+    height: 80vh;
+    border: 1px solid variables.$bl-caja;
+    border-radius: 14.5991px;
+}
+
+.title {
+    @include mixinsfunc.titulo;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.login {
+    @include mixinsfunc.input;
+}
+
+.clave {
+
+    @include mixinsfunc.input;
+}
+
+.boton__principal {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-principal, white, none, 400, 16, variables.$ff-principal);
+}
+
+.boton__principal:disabled {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-disabled, variables.$tl-boton, none, 400, 16px, variables.$ff-principal);
+}
+
+
+.form__container {
+    display: grid;
+    justify-content: center;
+    padding-top: 3.2rem;
+    gap: 2rem;
+    height: 38vh;
+}
+
+.form__group {
+    margin-top: 0.7rem;
+    position: relative;
+    height: 5vh;
+}
+
+.container__image {
+    display: grid;
+    justify-content: center;
+}
+
+.form__label {
+    cursor: pointer;
+    position: absolute;
+    font-family: variables.$ff-principal;
+    top: -1.4rem;
+    left: 5px;
+}
+
+.header__access {
+    height: 4rem;
+    display: grid;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.logo__access {
+    left: 5rem;
+}
+
+@media screen and (max-width: 500px) {
+    .boton__principal {
+        width: 90vw;
+    }
+
+    .title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: -0.03em;
+    }
+
+    .login {
+        width: 90vw;
+        height: 40px;
+    }
+
+    .clave {
+        width: 90vw;
+        height: 40px;
+    }
+
+    .usuario__office {
+        width: 280px;
+    }
+
+    .form__label {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .container__access {
+        border: none;
+    }
+}

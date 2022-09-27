@@ -1,0 +1,306 @@
+@use 'initials';
+@use 'menu';
+@use 'variables';
+@use 'public';
+@use 'mixinsfunc';
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700&family=Berkshire+Swash&family=Roboto:wght@300;400&family=Spicy+Rice&display=swap");
+
+
+h1 {
+    @include mixinsfunc.titulo;
+}
+
+.boton__principal {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-principal, white, none, 400, 16px, variables.$ff-principal);
+    cursor: pointer;
+}
+
+.boton__principal:disabled {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-disabled, variables.$tl-boton, none, 400, 16px, variables.$ff-principal);
+}
+
+.boton__invert {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-invert, variables.$bb-principal, none, 400, 16px, variables.$ff-principal);
+    cursor: pointer;
+}
+
+.boton__invert:disabled {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-invert, variables.$tl-boton, none, 400, 16px, variables.$ff-principal);
+}
+
+.boton__filtro {
+    @include mixinsfunc.boton-color(31px, 81px, variables.$bw-boton, variables.$bb-filtro, variables.$bb-filtro, 500, 12px, variables.$ff-principal);
+    cursor: pointer;
+    justify-self: end;
+
+}
+
+.mobile__voucher {
+    display: none;
+}
+
+.mobile__boleta {
+    display: none;
+}
+
+.imgsolicitud {
+    display: none;
+}
+
+.mobile__header {
+    display: grid;
+    align-items: center;
+    display: none;
+}
+
+.container__principal {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+        "head head"
+        "users users"
+        "boletas boletas";
+    grid-template-rows: 4rem 7rem auto;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+    padding-top: 1rem;
+    @include mixinsfunc.gradiente;
+
+}
+
+.options__user {
+    grid-area: head;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    font-family: variables.$ff-principal;
+    justify-content: end;
+}
+
+.options__user:hover {
+    cursor: pointer;
+}
+
+.user__options {
+    font-family: variables.$ff-principal;
+    grid-template-rows: 1fr 1fr;
+    grid-area: users;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.prestamo {
+    grid-area: prestacard;
+    display: grid;
+    margin-top: 20px;
+    height: auto;
+    width: 95%;
+    padding: 20px;
+    padding-top: 0;
+
+    background: variables.$bg-light;
+    border: 1px solid variables.$bl-caja;
+    border-radius: 16px;
+}
+
+.boleta {
+    grid-area: boletas;
+    display: grid;
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    // background: variables.$bg-light;
+
+    border: 1px solid variables.$bl-caja;
+    border-radius: 16px;
+    grid-template-rows: 4rem 4rem 45vh;
+    align-items: center;
+}
+
+.container__boton {
+    display: grid;
+    width: 97%;
+    grid-template-columns: 30% 70%;
+    gap: 1rem;
+}
+
+.prestamo__titulo {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+    height: 100%;
+}
+
+.boletas__item {
+    display: grid;
+    grid-template-columns: 25% 60% 15%;
+    align-items: center;
+    height: 7.5vh;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+    padding-left: 1rem;
+}
+
+.boletas__item:hover {
+    border: 1px solid variables.$bl-caja;
+    border-radius: 8px;
+    background: variables.$bb-invert;
+    color: variables.$tl-boton;
+}
+
+.item__central {
+    justify-self: center;
+}
+
+.item__derecha {
+    justify-self: end;
+}
+
+.boletas__cabecera {
+    display: grid;
+    grid-template-columns: 25% 60% 15%;
+    align-items: center;
+    height: 6vh;
+    background: variables.$bb-invert;
+    border-radius: 8px;
+    font-family: variables.$ff-principal;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: variables.$tl-boton;
+    padding-right: 3rem;
+    padding-left: 1rem;
+}
+
+.item_seleccion {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.boletas__item__informacion {
+    display: flex;
+    gap: 10px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .navbar {
+        display: none;
+    }
+
+    .boletas__cabecera {
+        display: none;
+    }
+
+    .mobile__voucher {
+        font-family: variables.$ff-principal;
+        display: grid;
+        width: 95%;
+        border-bottom: solid #ecf1f8;
+    }
+
+    .boleta {
+        display: none;
+    }
+
+    .imgsolicitud {
+        display: grid;
+        height: 200px;
+        justify-self: center;
+        padding: 1.5rem;
+    }
+
+    .boletas__item {
+        display: grid;
+        grid-template-areas:
+            "mes     monto"
+            "informa monto";
+        grid-template-columns: 60% 40%;
+    }
+
+    .boletas__item__informacion {
+        grid-area: informa;
+        grid-template-columns: 2% 65% 30%;
+    }
+
+    .item__titulo {
+        grid-area: mes;
+    }
+
+    .item_seleccion {
+        grid-area: monto;
+    }
+
+    .container__boton {
+        display: none;
+    }
+
+    .container__main {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .container__principal {
+        display: grid;
+        width: 100%;
+        grid-template-areas:
+            "head"
+            "users"
+            "vouchers";
+        grid-template-columns: 1fr;
+        grid-template-rows: 3rem 16rem auto;
+        padding: 1rem;
+        gap: 1rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .user__options {
+        display: none;
+    }
+
+    .mobile__boleta {
+        display: grid;
+        width: 100%;
+        padding: 0px;
+        border: none;
+        grid-area: vouchers;
+    }
+
+
+    .boton__principal {
+        display: none;
+    }
+
+    .mobile__header {
+        grid-area: head;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        padding: 0;
+    }
+
+    .boton__menu {
+        padding: 0;
+        justify-self: flex-end;
+    }
+
+    .logo__access {
+        padding: 0;
+        justify-self: left;
+        width: 60%;
+    }
+
+
+    .options__user {
+        display: none;
+    }
+
+
+}

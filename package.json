@@ -1,0 +1,23 @@
+{
+  "name": "vega",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luismonroy1971/vega.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luismonroy1971/vega/issues"
+  },
+  "homepage": "https://github.com/luismonroy1971/vega#readme",
+  "devDependencies": {
+    "sass": "^1.54.9"
+  }
+}

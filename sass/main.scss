@@ -1,0 +1,448 @@
+@use 'initials';
+@use 'menu';
+@use 'variables';
+@use 'public';
+@use 'mixinsfunc';
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700&family=Berkshire+Swash&family=Roboto:wght@300;400&family=Spicy+Rice&display=swap");
+
+
+h1 {
+    @include mixinsfunc.titulo;
+}
+
+.boton__principal {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-principal, white, none, 400, 16px, variables.$ff-principal);
+}
+
+.boton__principal:disabled {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-disabled, variables.$tl-boton, none, 400, 16px, variables.$ff-principal);
+}
+
+.boton__invert {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-invert, variables.$bb-principal, none, 400, 16px, variables.$ff-principal);
+}
+
+.boton__filtro {
+    @include mixinsfunc.boton-color(31px, 81px, variables.$bw-boton, variables.$bb-filtro, variables.$bb-filtro, 500, 12px, variables.$ff-principal);
+
+    justify-self: end;
+
+}
+
+.boton__boletas {
+    display: none;
+}
+
+.boton__prestacard {
+    display: none;
+}
+
+.boton__descarga {
+    display: none;
+}
+
+.boton__envio {
+    display: none;
+}
+
+.mobile__header {
+    display: grid;
+    align-items: center;
+    display: none;
+}
+
+.menu-movil {
+    display: none;
+}
+
+.container__mobile {
+    padding: 0;
+}
+
+.container__principal {
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+        "head head"
+        "users users"
+        "requests vouchers"
+        "prestacard boletas";
+    grid-template-rows: 4.5rem 4.5rem 200px auto;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+    padding-top: 1rem;
+    @include mixinsfunc.gradiente;
+}
+
+.options__user {
+    grid-area: head;
+    display: flex;
+    align-items: center;
+    font-family: variables.$ff-principal;
+    justify-content: end;
+
+}
+
+.options__user:hover {
+    cursor: pointer;
+}
+
+.user {
+    grid-area: users;
+    font-family: variables.$ff-principal;
+}
+
+.request {
+    grid-area: requests;
+    display: grid;
+    padding: 2vh;
+    padding-left: 2.5vh;
+    padding-right: 3vh;
+    width: 95%;
+    height: 90%;
+    background: variables.$bw-boton;
+
+    border: 0.912442px solid variables.$bl-caja;
+    border-radius: 14.5991px;
+}
+
+.solicitud {
+    display: flex;
+    align-items: center;
+}
+
+.amount {
+    padding-left: 1.5rem;
+}
+
+.voucher {
+    grid-area: vouchers;
+    display: grid;
+    padding: 20px;
+
+    width: 100%;
+    height: 90%;
+
+    background: variables.$bg-light;
+
+    border: 0.912442px solid variables.$bl-caja;
+    border-radius: 14.5991px;
+}
+
+.prestamo {
+    grid-area: prestacard;
+    display: grid;
+    margin-top: 0;
+    width: 95%;
+    padding: 20px;
+    padding-top: 0;
+
+    background: variables.$bg-light;
+
+    border: 1px solid variables.$bl-caja;
+    border-radius: 16px;
+    grid-template-rows: 9vh 9vh 9vh 9vh;
+}
+
+.boleta {
+    grid-area: boletas;
+    display: grid;
+    margin-top: 0;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+
+    background: variables.$bg-light;
+
+    border: 1px solid variables.$bl-caja;
+    border-radius: 16px;
+    grid-template-rows: 9vh;
+}
+
+.container__boton {
+    display: grid;
+    width: 97%;
+    grid-template-columns: 30% 70%;
+    gap: 1rem;
+}
+
+.prestamo__titulo {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+}
+
+.pagos__item {
+    display: grid;
+    grid-template-columns: 10% 60% 22% 8%;
+    align-items: center;
+    height: 5rem;
+}
+
+.pagos__item:hover {
+    border: 1px solid variables.$bl-caja;
+    border-radius: 8px;
+    background: variables.$bb-invert;
+    color: variables.$tl-boton;
+}
+
+.boletas__item:hover {
+    border: 1px solid variables.$bl-caja;
+    border-radius: 8px;
+    background: variables.$bb-invert;
+    color: variables.$tl-boton;
+}
+
+.boletas__item {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+    height: 8vh;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+}
+
+.boletas__item__informacion {
+    display: flex;
+    gap: 10px;
+}
+
+.item__central {
+    justify-content: end;
+    padding-right: 1rem;
+}
+
+.item__derecha {
+    justify-content: end;
+}
+
+.color__gray {
+    color: variables.$tg-titulo;
+}
+
+.boletas__contenedor {
+    padding-left: 1.5rem;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar {
+        display: none;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .container__boton {
+        display: none;
+    }
+
+    .container__principal {
+        display: grid;
+        width: 100%;
+        grid-template-areas:
+            "head"
+            "users"
+            "vouchers"
+            "requests"
+            "menus";
+        grid-template-columns: 95%;
+        grid-template-rows: .5fr 1fr 1.4fr 1.4fr 2fr;
+        height: 85vh;
+        padding-left: .5rem;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .voucher {
+        grid-area: vouchers;
+        margin-left: 1.5rem;
+        width: 90%;
+        padding-top: 0%;
+    }
+
+    .request {
+        grid-area: requests;
+        margin-left: 1.5rem;
+        display: grid;
+        width: 95%;
+        align-items: center;
+
+    }
+
+    .solicitud {
+        display: grid;
+        width: 100%;
+        height: 17vh;
+        display: grid;
+        padding: 0;
+        grid-template-areas:
+            "boleta-texto boleta-img menu";
+        grid-template-columns: 2fr 1.5fr .5fr;
+    }
+
+    .boton__descarga {
+        @include mixinsfunc.boton-color(58px, 100%, variables.$bb-principal, white, none, 400, 16px, variables.$ff-principal);
+        display: grid;
+        align-content: center;
+        align-self: end;
+        grid-area: menu-boletas;
+        display: none;
+    }
+
+    .menu {
+        grid-area: menus;
+        position: absolute;
+        width: 100vw;
+        left: 0;
+        bottom: 8rem;
+        align-self: end;
+    }
+
+    .boton__envio {
+        @include mixinsfunc.boton-color(58px, 100%, variables.$bb-invert, variables.$bb-principal, none, 400, 16px, variables.$ff-principal);
+        display: grid;
+        align-content: center;
+        display: none;
+    }
+
+    .boton__boletas {
+        @include mixinsfunc.boton-redondeado-rojo;
+        display: grid;
+        align-content: center;
+        width: 100%;
+
+    }
+
+    .boton__boletas:hover,
+    .boton__prestacard:hover {
+        cursor: pointer;
+        background-color: variables.$bm-activo-menu-rojo;
+    }
+
+    .boton__prestacard {
+        @include mixinsfunc.boton-rectangular-rojo;
+        width: 100%;
+        display: flex;
+        gap: .5rem;
+
+        align-content: center;
+        grid-area: menu-prestacard;
+
+    }
+
+    .boton__boletas {
+        display: flex;
+        gap: .5rem;
+    }
+
+
+    .menu__description {
+        font-family: variables.$ff-principal;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: -0.03em;
+
+        /* White 1 */
+
+        color: #FFFFFF;
+
+        opacity: 0.45;
+    }
+
+
+    .voucher {
+        display: grid;
+        width: 100%;
+        height: 17vh;
+    }
+
+    .amount {
+        grid-area: boleta-texto;
+    }
+
+    .imgvoucher {
+        grid-area: boleta-img;
+        justify-self: flex-end;
+    }
+
+    .menu-movil {
+        grid-area: menu;
+        display: flex;
+        justify-self: end;
+    }
+
+    .boton__principal {
+        display: none;
+    }
+
+    .imgsolicitud {
+        justify-self: end;
+    }
+
+    .request {
+        width: 100%;
+        height: 19vh;
+    }
+
+    .container__main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: 100vh;
+        justify-content: flex-start;
+    }
+
+    .mobile__header {
+        grid-area: head;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        padding-left: 1.5rem;
+        padding-top: 1rem;
+
+    }
+
+    .boton__menu {
+        position: absolute;
+        right: 1.2rem;
+        top: 1.2rem;
+    }
+
+    .logo__access {
+        padding: 0;
+        justify-self: left;
+        width: 60%;
+    }
+
+
+    .boleta {
+        display: none;
+    }
+
+    .prestamo {
+        display: none;
+    }
+
+    .mobile__boton {
+        display: block;
+    }
+
+    .options__user {
+        display: none;
+    }
+
+    .mobile_espaciador {
+        display: grid;
+    }
+
+    .desktop__espaciador {
+        display: none;
+    }
+
+    .container__mobile {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

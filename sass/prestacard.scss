@@ -1,0 +1,415 @@
+@use 'initials';
+@use 'menu';
+@use 'variables';
+@use 'public';
+@use 'mixinsfunc';
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700&family=Berkshire+Swash&family=Roboto:wght@300;400&family=Spicy+Rice&display=swap");
+
+h1 {
+    @include mixinsfunc.titulo;
+}
+
+.boton__user {
+    padding-right: 1rem;
+}
+
+.logo__access {
+    padding: 3rem;
+    justify-self: center;
+    width: 100%;
+}
+
+.boton__principal {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-principal, white, none, 400, 16px, variables.$ff-principal);
+}
+
+.boton__principal:disabled {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-disabled, variables.$tl-boton, none, 400, 16px, variables.$ff-principal);
+}
+
+.boton__filtro {
+    @include mixinsfunc.boton-color(31px, 81px, variables.$bw-boton, variables.$tl-boton, #c1c1c1, 500, 12px, variables.$ff-principal);
+    justify-self: end;
+}
+
+.imgsolicitud {
+    display: none;
+}
+
+.mobile__header {
+    display: grid;
+    align-items: center;
+    display: none;
+}
+
+.boton__movil {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-principal, white, none, 400, 16px, variables.$ff-principal);
+    align-content: center;
+}
+
+.boton__movil {
+    display: none;
+}
+
+.mobile__voucher {
+    display: none;
+}
+
+.mobile__boleta {
+    display: none;
+}
+
+.imgsolicitud {
+    display: none;
+}
+
+.mobile__header {
+    display: grid;
+    align-items: center;
+    display: none;
+}
+
+.menu-movil {
+    display: none;
+}
+
+.informacion__pago {
+    display: flex;
+    gap: 1rem;
+}
+
+.mensaje-pago {
+    display: none;
+}
+
+.container__principal {
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+        "head head"
+        "users users"
+        "boletas boletas";
+    grid-template-rows: 5rem 6rem 35rem;
+    grid-template-columns: 1fr 1fr;
+    @include mixinsfunc.gradiente;
+    padding: 2rem;
+    align-items: center;
+}
+
+.options__user {
+    grid-area: head;
+    display: flex;
+    align-items: center;
+    font-family: variables.$ff-principal;
+    justify-content: end;
+}
+
+.user__options {
+    font-family: variables.$ff-principal;
+    grid-area: users;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+}
+
+.solicitud {
+    display: flex;
+    align-items: center;
+}
+
+.amount {
+    padding-left: 1.5rem;
+}
+
+.boleta {
+    grid-area: boletas;
+    display: grid;
+    width: 100%;
+    padding: 2rem;
+    padding-top: 0;
+    // background: variables.$bg-light;
+    border: 1px solid variables.$bl-caja;
+    border-radius: 16px;
+    grid-template-rows: 3.5rem 2.5rem auto;
+}
+
+.container__boton {
+    display: grid;
+    width: 97%;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.prestamo__titulo {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+    height: 100%;
+}
+
+.boletas__item {
+    display: grid;
+    grid-template-columns: 24% 29% 37% 10%;
+    align-items: center;
+    height: 5.5rem;
+    padding-left: 1rem;
+}
+
+.boletas__item:hover {
+    border: 1px solid variables.$bl-caja;
+    border-radius: 8px;
+    background: variables.$bb-invert;
+    color: variables.$tl-boton;
+}
+
+.item__central {
+    justify-self: center;
+}
+
+.item__derecha {
+    justify-self: end;
+}
+
+.boleta__cabecera {
+    display: grid;
+    grid-template-columns: 25% 30% 20% 25%;
+    align-items: center;
+
+    background: variables.$bb-invert;
+    border-radius: 8px;
+    font-family: variables.$ff-principal;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: variables.$tl-boton;
+    padding-right: 3rem;
+    padding-left: 1rem;
+    height: 85%;
+}
+
+.item_seleccion {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.item__detalle {
+    display: flex;
+    gap: 1rem;
+}
+
+.item__text {
+    font-family: variables.$ff-principal;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.03em;
+    color: variables.$tl-boton;
+}
+
+.item__fecha {
+    font-family: variables.$ff-principal;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.03em;
+    color: variables.$tl-boton;
+}
+
+.item__periodo {
+    display: grid;
+    font-family: variables.$ff-principal;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    letter-spacing: -0.03em;
+    border-top: solid variables.$bs-caja;
+    color: variables.$tg-titulo;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar {
+        display: none;
+    }
+
+    .boleta__cabecera {
+        display: none;
+    }
+
+    .user_options {
+        display: none;
+    }
+
+    .mobile__voucher {
+        padding-top: 1rem;
+        display: grid;
+        width: 100%;
+    }
+
+    .mobile__boleta {
+        display: grid;
+    }
+
+    .boleta {
+        display: none;
+    }
+
+    .item__text {
+        display: none;
+    }
+
+    .imgsolicitud {
+        display: grid;
+        height: 200px;
+        justify-self: center;
+        padding: 2rem;
+    }
+
+    .boletas__item {
+        display: grid;
+        grid-template-areas:
+            "mes     monto"
+            "informa monto";
+        grid-template-columns: 60% 40%;
+
+    }
+
+    .boletas__item__informacion {
+
+        grid-template-columns: 2% 65% 30%;
+    }
+
+    .mensaje-pago {
+        font-family: variables.$ff-principal;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: flex-end;
+        letter-spacing: -0.03em;
+        color: variables.$th-prestamo;
+        display: flex;
+        grid-area: informa;
+        align-items: center;
+    }
+
+    .item__titulo {
+        grid-area: mes;
+    }
+
+    .item_seleccion {
+        justify-content: end;
+        grid-area: monto;
+    }
+
+
+    .request {
+        height: 15vh;
+    }
+
+    .container__main {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .container__principal {
+        display: grid;
+        width: 100%;
+        grid-template-areas:
+            "head"
+            "users"
+            "boton"
+            "vouchers";
+        grid-template-columns: 1fr;
+        grid-template-rows: 2rem 15rem 2.5rem auto;
+        padding: 1rem;
+        gap: 1rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .boton__movil {
+        display: grid;
+        grid-area: boton;
+
+    }
+
+    .boton__principal {
+        display: none;
+    }
+
+
+    .user__options {
+        grid-area: users;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-self: baseline;
+    }
+
+    .mobile__boleta {
+        width: 100%;
+        padding: 1rem;
+        padding-top: 3rem;
+        border: none;
+        grid-area: vouchers;
+    }
+
+
+
+    .menu-movil {
+        grid-area: menu;
+        display: flex;
+        justify-self: end;
+    }
+
+    .request {
+        width: 100%;
+    }
+
+
+    .mobile__header {
+        grid-area: head;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        padding: 0;
+
+    }
+
+    .boton__menu {
+        padding: 0;
+        justify-self: flex-end;
+    }
+
+    .logo__access {
+        padding: 0;
+        justify-self: left;
+        width: 60%;
+    }
+
+
+
+    .prestamo {
+        display: none;
+    }
+
+
+    .user__options {
+        display: none;
+    }
+
+    .options__user {
+        display: none;
+    }
+
+
+}

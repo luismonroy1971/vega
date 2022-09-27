@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/profile.css" />
+  </head>
+  <body>
+    <div class="container__main">
+      <div class="header">
+        <div class="navbar">
+          <img
+            class="logo__access"
+            src="/img/logo.svg"
+            alt="Logo de Corporación Vega"
+          />
+          <ul class="nav__menu">
+            <li class="nav__menu__item">
+              <img class="boton__user" src="/img/icons/home.svg" /><a
+                href="#"
+                class="nav__link"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav__menu__item">
+              <img class="boton__user" src="/img/icons/document.svg" /><a
+                href="#"
+                class="nav__link"
+                >Boletas</a
+              >
+            </li>
+            <li class="nav__menu__item">
+              <img class="boton__user" src="/img/icons/card.svg" /><a
+                href="#"
+                class="nav__link"
+                >PrestaCard</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container__profile">
+        <div class="mobile__header">
+          <img
+            class="logo__access"
+            src="/img/logo.svg"
+            alt="Logo de Corporación Vega"
+          />
+
+          <img class="boton__menu" src="/img/icons/boton-hamburguesa.svg" />
+        </div>
+        <div class="options__user">
+          <img class="boton__user" src="/img/icons/arrow-down.svg" />
+          <div class="user">
+            <p class="h3">Valeria Paola Coell...</p>
+            <!-- <p class="view__profile">Ver perfil</p> -->
+          </div>
+          <img class="boton__perfil" src="/img/icons/boton-user.svg" />
+        </div>
+        <h1 class="profile">Perfil</h1>
+        <div class="profile__container">
+          <form class="form">
+            <div class="form__container">
+              <div class="form__group">
+                <input
+                  class="names"
+                  type="text"
+                  id="names"
+                  name="names"
+                  required
+                  placeholder=" "
+                />
+                <label class="form__label" for="names">Nombres</label>
+              </div>
+              <div class="form__group">
+                <input
+                  class="lastnames"
+                  type="text"
+                  id="lastnames"
+                  name="lastnames"
+                  required
+                  placeholder=" "
+                />
+                <label class="form__label" for="lastnames">Apellidos</label>
+              </div>
+              <div class="form__group">
+                <input
+                  class="login"
+                  type="text"
+                  id="login"
+                  name="login"
+                  required
+                  placeholder=" "
+                />
+                <label class="form__label" for="login">Correo o DNI</label>
+              </div>
+              <div class="form__group">
+                <input
+                  class="clave"
+                  type="password"
+                  id="clave"
+                  name="clave"
+                  required
+                  placeholder=" "
+                />
+                <label class="form__label" for="clave">Contraseña</label>
+              </div>
+              <button class="boton__principal">Guardar cambios</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

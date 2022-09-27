@@ -1,0 +1,511 @@
+@use 'initials';
+@use 'menu';
+@use 'variables';
+@use 'public';
+@use 'mixinsfunc';
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700&family=Berkshire+Swash&family=Roboto:wght@300;400&family=Spicy+Rice&display=swap");
+
+.boton__user {
+    display: flex;
+    justify-self: center;
+    padding-right: 10px;
+}
+
+.logo__access {
+    padding: 3rem;
+    justify-self: center;
+    width: 100%;
+}
+
+.boton__principal {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-principal, white, none, 400, 16px, variables.$ff-principal);
+}
+
+.boton__principal:disabled {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-disabled, variables.$tl-boton, none, 400, 16px, variables.$ff-principal);
+}
+
+.mobile__boton {
+    display: none;
+}
+
+.mobile__resumen__aceptacion {
+    display: none;
+}
+
+.mobile__header {
+    display: grid;
+    align-items: center;
+    display: none;
+}
+
+.solicita {
+    display: none;
+}
+
+.container__principal {
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+        "head head"
+        "users users"
+        "boletas boletas";
+    grid-template-rows: 5rem 6rem 35rem;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+    padding-top: 1rem;
+    @include mixinsfunc.gradiente;
+}
+
+.options__user {
+    grid-area: head;
+    display: flex;
+    align-items: center;
+    font-family: variables.$ff-principal;
+    justify-content: end;
+}
+
+.user_options {
+    font-family: variables.$ff-principal;
+    grid-area: users;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+}
+
+.solicitud {
+    display: flex;
+    align-items: center;
+}
+
+.amount {
+    padding-left: 1.5rem;
+}
+
+.prestamo {
+    grid-area: boletas;
+    display: grid;
+    margin-top: 0;
+    gap: 1rem;
+    grid-template-columns: 60% 38%;
+}
+
+.prestamo__contenedor {
+    background: variables.$bg-menu;
+    height: auto;
+    border: 1px solid variables.$bl-caja;
+    border-radius: 16px;
+    padding: 4rem;
+    z-index: 60;
+}
+
+.prestamo__cabecera {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "importe importe"
+        "opcion opcion";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr 2fr;
+    height: 18vh;
+    padding-bottom: 1rem;
+    border-bottom: solid #e1e7ed;
+    align-items: center;
+}
+
+.container__boton {
+    display: grid;
+    width: 96%;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+    gap: 1rem;
+}
+
+.prestamo__titulo {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+}
+
+.pagos__item {
+    display: grid;
+    grid-template-columns: 25% 60% 20% 10%;
+    align-items: center;
+    height: auto;
+}
+
+.boletas__item {
+    display: grid;
+    grid-template-columns: 24% 29% 37% 10%;
+    align-items: center;
+    height: 80px;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+    padding-left: 1rem;
+}
+
+.boletas__item:hover {
+    border: 1px solid variables.$bl-caja;
+    border-radius: 8px;
+    background: variables.$bb-invert;
+    color: variables.$th-prestamo;
+}
+
+.boletas__item__informacion {
+    display: flex;
+    gap: 10px;
+}
+
+.item__central {
+    justify-self: center;
+}
+
+.item__derecha {
+    justify-content: end;
+}
+
+.item__derecha1 {
+    justify-self: end;
+}
+
+
+
+.boletas__cabecera {
+    display: grid;
+    grid-template-columns: 25% 30% 20% 25%;
+    align-items: center;
+    border-radius: 8px;
+    font-family: variables.$ff-principal;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: variables.$tl-boton;
+    padding-right: 3rem;
+    padding-left: 1rem;
+    height: 60px;
+}
+
+.item_seleccion {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.item__detalle {
+    display: flex;
+    gap: 1rem;
+}
+
+.solicitud__titulo {
+    grid-area: titulo;
+    width: 104px;
+
+    font-family: variables.$ff-principal;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    color: variables.$th-prestamo;
+}
+
+.solicitud__importe {
+    grid-area: importe;
+    font-family: variables.$ff-principal;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 53px;
+    letter-spacing: -0.02em;
+    color: variables.$th-prestamo;
+
+}
+
+.boletas__contenedor {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 10px auto;
+}
+
+.prestamo__titulo {
+    font-family: variables.$ff-principal;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.03em;
+    color: variables.$th-prestamo;
+}
+
+.prestamo__dato {
+    font-family: variables.$ff-principal;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.03em;
+    color: variables.$th-titulo;
+    justify-content: end;
+}
+
+.prestamo__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    height: 2.2rem;
+}
+
+.resumen__contenedor {
+
+    height: auto;
+    border: 1px solid variables.$bl-caja;
+    border-radius: 16px;
+    padding: 2rem;
+    padding-top: 4rem;
+}
+
+
+.boton__opciones {
+    grid-area: opcion;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 100%;
+}
+
+.title {
+    padding-bottom: .5rem;
+}
+
+.aceptacion {
+    padding-left: 1rem;
+    height: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+
+    .mobile__header {
+        grid-area: head;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 95%;
+        padding: 1rem;
+        align-self: center;
+
+    }
+
+    .boton__menu {
+        padding: 0;
+        justify-self: flex-end;
+    }
+
+    .logo__access {
+        padding-left: 1rem;
+        justify-self: left;
+        width: 100%;
+
+    }
+
+    .user {
+        display: none;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .user__options {
+        display: none;
+    }
+
+    .options__user {
+        display: none;
+    }
+
+    .resumen__contenedor {
+        display: none;
+    }
+
+    .prestamo {
+        grid-area: boletas;
+        display: grid;
+        margin-top: 0;
+        gap: 1rem;
+        grid-template-columns: 100%;
+    }
+
+    .prestamo__contenedor {
+        width: 100%;
+    }
+
+    .boton__opciones {
+        display: none;
+    }
+
+    .boton__filtro {
+        width: 100%;
+    }
+
+    .prestamo__cabecera {
+        display: grid;
+        grid-template-areas:
+            "mensaje"
+            "vacio"
+            "accion"
+            "importe"
+            "boton";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 4fr 1fr 1fr 2fr;
+        height: 25vh;
+        justify-content: center;
+        padding-bottom: 1.5rem;
+        border-bottom: solid variables.$bl-caja;
+    }
+
+    .vacios {
+        grid-area: vacio;
+    }
+
+    .mobile_mensaje {
+        display: block;
+        grid-area: mensaje;
+        font-family: variables.$ff-principal;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        padding-top: 1rem;
+        letter-spacing: -0.02em;
+        color: variables.$th-titulo;
+    }
+
+    .solicitud__titulo {
+        grid-area: accion;
+        font-size: 18px;
+        justify-self: center;
+    }
+
+    .solicitud__importe {
+        grid-area: importe;
+        font-size: 28px;
+        width: 100px;
+        justify-self: center;
+    }
+
+    .mobile__boton__opciones {
+        grid-area: boton;
+        display: grid;
+    }
+
+    .container__main {
+        grid-template-columns: 1fr;
+    }
+
+    .container__principal {
+        grid-template-rows: 1rem 5rem 1rem;
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 0;
+        padding-top: 2rem;
+        @include mixinsfunc.bordersuperior-sombra;
+    }
+
+    .boton__movil {
+        display: grid;
+        grid-area: boton;
+        padding: 2rem;
+    }
+
+    .boton__movil:hover {
+        background-color: variables.$bb-invert;
+        color: variables.$bb-principal;
+    }
+
+    .prestamo__contenedor {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .prestamo__item {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+    }
+
+    .visual__pc {
+        display: none;
+    }
+
+    .prestamo__detalle {
+        height: 10rem;
+    }
+
+    .mobile__titulo {
+        height: 8rem;
+    }
+
+    .solicita {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .solicita__titulo {
+        font-family: variables.$ff-principal;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: -0.02em;
+        padding-bottom: .5rem;
+
+        /* Gray 5 */
+
+        color: #383838;
+        text-align: center;
+
+    }
+
+    .solicita__pasos {
+        font-family: variables.$ff-principal;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height */
+
+        letter-spacing: -0.03em;
+
+        /* Gray 1 */
+
+        color: #C1C1C1;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+
+    .solicitud__titulo {
+        text-align: center;
+    }
+
+    .mobile__resumen__aceptacion {
+        display: flex;
+        justify-content: center;
+        gap: .5rem;
+        z-index: 100;
+    }
+
+    .mobile__boton {
+        display: block;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+}

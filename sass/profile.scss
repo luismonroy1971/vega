@@ -1,0 +1,210 @@
+@use 'initials';
+@use 'menu';
+@use 'variables';
+@use 'public';
+@use 'mixinsfunc';
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700&family=Berkshire+Swash&family=Roboto:wght@300;400&family=Spicy+Rice&display=swap");
+
+.mobile__header {
+    display: grid;
+    align-items: center;
+    display: none;
+}
+
+.options__user {
+    grid-area: head;
+    display: flex;
+    align-items: center;
+    font-family: variables.$ff-principal;
+    justify-content: end;
+}
+
+.boton__user {
+    padding-right: 1rem;
+}
+
+.logo__access {
+    padding: 3rem;
+    justify-self: center;
+    width: 100%;
+}
+
+.login {
+    @include mixinsfunc.input;
+}
+
+.clave {
+
+    @include mixinsfunc.input;
+}
+
+.boton__principal {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-principal, white, none, 400, 16px, variables.$ff-principal);
+
+}
+
+.boton__principal:disabled {
+    @include mixinsfunc.boton-color(58px, 100%, variables.$bb-disabled, variables.$tl-boton, none, 400, 16px, variables.$ff-principal);
+}
+
+
+.form__container {
+    display: grid;
+    justify-content: center;
+    padding-top: 3.2rem;
+    gap: 2rem;
+}
+
+.form__group {
+    margin-top: 0.7rem;
+    position: relative;
+}
+
+.form__label {
+    cursor: pointer;
+    position: absolute;
+    font-family: variables.$ff-principal;
+    top: -1.4rem;
+    left: 5px;
+}
+
+.header__access {
+    height: 4rem;
+    display: grid;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.logo__access {
+    left: 5rem;
+}
+
+.container__profile {
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+        "head"
+        "perfil"
+        "details";
+    grid-template-rows: 100px 80px auto;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    @include mixinsfunc.gradiente;
+    justify-content: center;
+}
+
+.profile {
+    width: 100%;
+    height: 35px;
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+    font-family: variables.$ff-principal;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 35px;
+    letter-spacing: -0.02em;
+    color: variables.$th-titulo;
+}
+
+.profile__container {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid variables.$bl-caja;
+    border-radius: 14.5991px;
+    justify-self: center;
+}
+
+.names {
+    @include mixinsfunc.input;
+}
+
+.lastnames {
+    @include mixinsfunc.input;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar {
+        display: none;
+    }
+
+    .mobile__header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+
+    }
+
+    .boton__menu {
+        padding: 0;
+        justify-self: right;
+    }
+
+    .logo__access {
+        padding: 0;
+        justify-self: left;
+        width: 60%;
+    }
+
+    .boton__principal {
+        width: 90vw;
+    }
+
+    .profile {
+
+        margin-left: 0rem;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 35px;
+        letter-spacing: -0.02em;
+        margin-bottom: 2rem;
+    }
+
+    .names {
+        width: 90vw;
+        height: 40px;
+    }
+
+    .lastnames {
+        width: 90vw;
+        height: 40px;
+    }
+
+    .login {
+        width: 90vw;
+        height: 40px;
+    }
+
+    .clave {
+        width: 90vw;
+        height: 40px;
+    }
+
+    .form__label {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .container__profile {
+        display: grid;
+        width: 100%;
+        grid-template-areas:
+            "perfil";
+        grid-template-rows: auto;
+    }
+
+    .container__main {
+        grid-template-columns: 1fr;
+    }
+
+    .options__user {
+        display: none;
+    }
+
+    .profile__container {
+        border: none;
+    }
+}
